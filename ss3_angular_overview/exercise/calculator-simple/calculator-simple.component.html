@@ -1,0 +1,24 @@
+<p>calculator-simple works!</p>
+
+<div>
+
+  <div class="form-outline">Number 1
+    <input type="number" [(ngModel)]="number1" id="num1" class="form-control" />
+  </div>
+
+  <div class="form-outline">Number 2
+    <input type="number" [(ngModel)]="number2" id="num2" class="form-control" />
+  </div>
+
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary" (click)="cal(1)">add(+)</button>
+    <button type="button" class="btn btn-primary" (click)="cal(2)">sub(-)</button>
+    <button type="button" class="btn btn-primary" (click)="cal(3)">multiple(*)</button>
+    <button type="button" class="btn btn-primary" (click)="cal(4)">division(/)</button>
+  </div>
+
+  <div class="form-outline">Result
+    <input type="text" readonly [(ngModel)]="result" id="re" class="form-control" />
+  </div>
+
+</div>
