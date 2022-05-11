@@ -12,8 +12,8 @@
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-          <h1 class="mb-3">Customer</h1>
-          <h4 class="mb-3">List Customer</h4>
+          <h1 class="mb-3">Facility</h1>
+          <h4 class="mb-3">List Facility</h4>
           <a class="btn btn-outline-light btn-lg" href="#!" role="button"
           >Call to action</a
           >
@@ -32,31 +32,30 @@
     <thead class="thead-dark">
     <tr>
       <th>NO</th>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Birthday</th>
-      <th>Gender</th>
-      <th>Id Card</th>
-      <th>Phone</th>
-      <th>Email</th>
-      <th>Type</th>
+      <th>Name Service</th>
+      <th>Area Service</th>
+      <th>Cost Service</th>
+      <th>Max People</th>
+      <th>Room Standard</th>
+      <th>description Other Convenience</th>
+      <th>Pool Area</th>
+      <th>Number Of Floors</th>
       <th>Update</th>
       <th>Delete</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>KH-001</td>
-      <td>Nguyễn Hữu Huy</td>
-      <td>Nam</td>
-      <td>15/06/1993</td>
-      <td>201675221</td>
-      <td>0909112113</td>
-      <td>huyhuy@gmail.com</td>
-      <td>Đà Nẵng</td>
-      <td>Diamond</td>
+    <tr *ngFor="let service of services">
+      <td>{{service.serviceId}}</td>
+      <td>{{service.serviceName}}</td>
+      <td>{{service.serviceArea}}</td>
+      <td>{{service.serviceCost}}</td>
+      <td>{{service.serviceMaxPeople}}</td>
+      <td>{{service.roomStandard}}</td>
+      <td>{{service.descriptionOtherConvenience}}</td>
+      <td>{{service.poolArea}}</td>
+      <td>{{service.numberOfFloors}}</td>
+
 
       <td>
         <a type="button" class="btn btn-link btn-sm btn-rounded edit_btn" href="customer-edit.html" >
@@ -69,3 +68,4 @@
     </tbody>
   </table>
 </div>
+

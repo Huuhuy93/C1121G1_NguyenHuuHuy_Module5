@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
-import { ListServiceComponent } from './list-service/list-service.component';
-import { CreateServiceComponent } from './create-service/create-service.component';
-import { EditServiceComponent } from './edit-service/edit-service.component';
-import { ListCustomerComponent } from './list-customer/list-customer.component';
-import { CreateCustomerComponent } from './create-customer/create-customer.component';
-import { EditCustomerComponent } from './edit-customer/edit-customer.component';
-import { ListContractComponent } from './list-contract/list-contract.component';
+import { ListServiceComponent } from './service/list-service/list-service.component';
+import { CreateServiceComponent } from './service/create-service/create-service.component';
+import { EditServiceComponent } from './service/edit-service/edit-service.component';
+import { ListCustomerComponent } from './customer/list-customer/list-customer.component';
+import { CreateCustomerComponent } from './customer/create-customer/create-customer.component';
+import { EditCustomerComponent } from './customer/edit-customer/edit-customer.component';
+import { ListContractComponent } from './contract/list-contract/list-contract.component';
+import { CreateContractComponent } from './contract/create-contract/create-contract.component';
+import { ListFacilityComponent } from './service/list-facility/list-facility.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ListContractComponent } from './list-contract/list-contract.component';
     ListCustomerComponent,
     CreateCustomerComponent,
     EditCustomerComponent,
-    ListContractComponent
+    ListContractComponent,
+    CreateContractComponent,
+    ListFacilityComponent
   ],
   imports: [
     BrowserModule,

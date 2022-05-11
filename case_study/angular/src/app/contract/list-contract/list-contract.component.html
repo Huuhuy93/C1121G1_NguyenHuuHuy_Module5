@@ -32,6 +32,7 @@
     <thead class="thead-dark">
     <tr>
       <th>NO</th>
+      <th>Code</th>
       <th>Start date</th>
       <th>End date</th>
       <th>Deposit</th>
@@ -42,16 +43,16 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td>1</td>
-      <td>05/05/2020</td>
-      <td>10/05/2020</td>
-      <td>1000000</td>
-      <td>10000000</td>
-      <td>Nguyễn Văn An</td>
-      <td>Nguyễn Thị Hào</td>
-      <td>Room Twin 01</td>
-
+    <tr *ngFor="let contract of contracts">
+      <td>{{contract.contractId}}</td>
+      <td>{{contract.contractCode}}</td>
+      <td>{{contract.startDate}}</td>
+      <td>{{contract.endDate}}</td>
+      <td>{{contract.contractDeposit}}</td>
+      <td>{{contract.totalMoney}}</td>
+      <td>{{contract.employee}}</td>
+      <td>{{contract.customer}}</td>
+      <td>{{contract.service}}</td>
     </tr>
 
 
