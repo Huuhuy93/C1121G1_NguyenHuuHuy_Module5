@@ -1,0 +1,83 @@
+<div class="container">
+
+  <nav class="navbar navbar-light bg-dark" style="display: flex; justify-content: center">
+    <a class="navbar-brand" href="#" style="color: brown">Register</a>
+  </nav>
+
+  <form [formGroup]="registerForm" (ngSubmit)="submitRegister()" class="col-5 mx-auto">
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input formControlName="email" name="email" type="email" class="form-control" id="email" placeholder="name@example.com">
+      <small style="color: red" *ngIf="(registerForm.controls.email.hasError('required')&& (registerForm.controls.email.dirty||registerForm.controls.email.touched))">Email không được để trống !</small>
+      <small style="color: red" *ngIf="(registerForm.controls.email.hasError('email')&& (registerForm.controls.email.dirty||registerForm.controls.email.touched))">Phải nhập đúng định dạng email !</small>
+    </div>
+
+    <div class="form-group">
+      <label for="pass">Password</label>
+      <input formControlName="password" name="password" type="password" class="form-control" id="pass">
+      <small style="color: red" *ngIf="(registerForm.controls.password.hasError('required')&& (registerForm.controls.password.dirty||registerForm.controls.password.touched))">Password không được để trống !</small>
+      <small style="color: red" *ngIf="(registerForm.controls.password.hasError('minlength')&& (registerForm.controls.password.dirty||registerForm.controls.password.touched))">Password không được ít hơn 6 kí tự !</small>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm password</label>
+      <input formControlName="confirmPassword" (change)="checkConfirmPassword()" name="confirmPassword" type="password" class="form-control" id="confirmPassword">
+      <small style="color: red" *ngIf="registerForm.controls.confirmPassword.hasError('notMatch')&& (registerForm.controls.confirmPassword.dirty || registerForm.controls.confirmPassword.touched)">{{registerForm.controls.confirmPassword.errors.notMatch}}</small>
+      <small style="color: red" *ngIf="registerForm.controls.confirmPassword.hasError('required')&& (registerForm.controls.confirmPassword.dirty || registerForm.controls.confirmPassword.touched)">Password không được để trống !</small>
+      <small style="color: red" *ngIf="registerForm.controls.confirmPassword.hasError('minlength')&& (registerForm.controls.confirmPassword.dirty || registerForm.controls.confirmPassword.touched)">Password không được ít hơn 6 kí tự !</small>
+    </div>
+
+    <div class="form-group">
+      <label for="country">Country</label>
+      <select formControlName="country" name="country" class="form-control" id="country">
+        <option *ngFor="let c of countryList" [ngValue]="c.id" >
+          {{c.name}}
+        </option>
+      </select>
+      <small style="color: red" *ngIf="(registerForm.controls.country.hasError('required')&& (registerForm.controls.country.dirty))">Tuổi không được để trống !</small>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input formControlName="age" name="age" type="text" class="form-control" id="age">
+      <small style="color: red" *ngIf="(registerForm.controls.age.hasError('required')&& (registerForm.controls.age.dirty || registerForm.controls.age.touched))">Tuổi không được để trống !</small>
+      <small style="color: red" *ngIf="(registerForm.controls.age.hasError('min')&&registerForm.controls.age.dirty)">Tuổi phải lớn hơn 18 !</small>
+    </div>
+
+    <div class="form-group">
+      <fieldset class="form-group row">
+        <div>
+          <legend class="col-form-label col-sm-2 float-sm-left pt-0">Gender</legend>
+        </div>
+
+        <div class="col-sm-10" style="display: flex; align-items: center; margin-right: 30px">
+          <div class="form-check" style="margin-left: 30px">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="gridRadios1" value="1" checked>
+            <label class="form-check-label" for="gridRadios1">
+              Male
+            </label>
+          </div>
+          <div class="form-check" style="margin-left: 30px">
+            <input class="form-check-input" type="radio" formControlName="gender" name="gender" id="gridRadios2" value="0">
+            <label class="form-check-label" for="gridRadios2">
+              Female
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      <small style="color: red" *ngIf="(registerForm.controls.gender.hasError('required')&& (registerForm.controls.gender.dirty || registerForm.controls.gender.touched))">Giới tính không được để trống !</small>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input formControlName="phone" name="phone" type="text" class="form-control" id="phone">
+      <small style="color: red" *ngIf="(registerForm.controls.phone.hasError('required')&& (registerForm.controls.phone.dirty || registerForm.controls.phone.touched))">Số điện thoại không được để trống !</small>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </form>
+
+</div>
