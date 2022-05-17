@@ -81,7 +81,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="birthday">Customer Birthday</label>
-        <input type="text" formControlName="customerBirthday" name="customerBirthday" class="form-control" id="birthday">
+        <input type="date" formControlName="customerBirthday" name="customerBirthday" class="form-control" id="birthday">
         <small style="color: red" *ngIf="(createCustomerForm.controls.customerBirthday.hasError('required')&& (createCustomerForm.controls.customerBirthday.dirty||createCustomerForm.controls.customerBirthday.touched))">Ngày sinh không được để trống !</small>
       </div>
       <div class="form-group col-md-6">

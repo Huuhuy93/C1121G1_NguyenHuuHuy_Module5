@@ -27,8 +27,8 @@
 
 
 <div class="container" style="margin-top: 50px">
-  <form [formGroup]="editCustomerForm" (ngSubmit)="submitEditCustomer()">
-    <input type="hidden" id="customerId" name="customerId" value="1" formControlName="customerId">
+  <form [formGroup]="editCustomerForm" (ngSubmit)="updateCustomer(id)">
+    <input type="hidden" id="id" name="id" value="1" formControlName="id">
 
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -62,7 +62,7 @@
 
       <div class="form-group col-md-6">
         <label for="gender">Customer Gender</label>
-        <select id="gender"  formControlName="gender" name="gender" class="form-control">
+        <select id="gender"  formControlName="customerGender" name="gender" class="form-control">
           <option value="0" selected>Female</option>
           <option value="1">Male</option>
         </select>
