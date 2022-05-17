@@ -1,0 +1,74 @@
+{
+  "category": [
+    {
+      "name": "Samsung",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Apple"
+    },
+    {
+      "name": "Sony",
+      "id": 4
+    }
+  ],
+  "product": [
+    {
+      "name": "IPhone 12.5",
+      "price": 2400000,
+      "description": "New",
+      "category": {
+        "name": "Samsung",
+        "id": 2
+      },
+      "id": 1
+    },
+    {
+      "name": "IPhone 13",
+      "price": 3200000,
+      "description": "New",
+      "category": {
+        "id": 3,
+        "name": "Apple"
+      },
+      "id": 2
+    },
+    {
+      "name": "IPhone X",
+      "price": 1200000,
+      "description": "2 hen",
+      "category": {
+        "id": 3,
+        "name": "Apple"
+      },
+      "id": 3
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "customerCode": "KH-001",
+      "customerName": "Nguyễn Thị Hào",
+      "customerBirthday": "07/11/1970",
+      "customerGender": 0,
+      "customerIdCard": "643431213",
+      "customerPhone": "0905423362",
+      "customerEmail": "thihao07@gmail.com",
+      "customerAddress": "Đà Nẵng",
+      "customerType": 5
+    },
+    {
+      "id": 2,
+      "customerCode": "KH-002",
+      "customerName": "Phạm Xuân Diệu",
+      "customerBirthday": "08/08/1992",
+      "customerGender": 1,
+      "customerIdCard": "865342123",
+      "customerPhone": "0904333333",
+      "customerEmail": "xuandieu92@gmail.com",
+      "customerAddress": "Quảng Trị",
+      "customerType": 3
+    }
+  ]
+}
