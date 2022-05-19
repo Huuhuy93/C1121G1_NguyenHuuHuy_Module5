@@ -1,0 +1,101 @@
+{
+  "contract": [
+    {
+      "id": 1,
+      "contractCode": "HD-001",
+      "startDate": "05-05-2021",
+      "endDate": "08-05-2021",
+      "contractDeposit": 1000000,
+      "totalMoney": 10000000,
+      "employee": "Nguyễn Văn An",
+      "customer": "Nguyễn Thị Hào",
+      "service": {
+        "id": 1,
+        "serviceName": "Room Twin 01"
+      }
+    },
+    {
+      "id": 2,
+      "contractCode": "HD-002",
+      "startDate": "03-07-2021",
+      "endDate": "08-07-2021",
+      "contractDeposit": 3000000,
+      "totalMoney": 15000000,
+      "employee": "Nguyễn Hữu Hà",
+      "customer": "Trương Đình Nghệ",
+      "service": {
+        "id": 1,
+        "serviceName": "Villa Beach Front"
+      }
+    }
+  ],
+  "customer": [
+  {
+    "id": 1,
+    "customerCode": "KH-001",
+    "customerName": "Nguyễn Thị Hào Hào",
+    "customerBirthday": "07/11/1970",
+    "customerGender": "0",
+    "customerIdCard": "643431213",
+    "customerPhone": "0905423362",
+    "customerEmail": "thihao07@gmail.com",
+    "customerAddress": "Đà Nẵng",
+    "customerType": 5
+  },
+  {
+    "id": 2,
+    "customerCode": "KH-002",
+    "customerName": "Phạm Xuân Diệu",
+    "customerBirthday": "08/08/1992",
+    "customerGender": "1",
+    "customerIdCard": "865342123",
+    "customerPhone": "0904333333",
+    "customerEmail": "xuandieu92@gmail.com",
+    "customerAddress": "Quảng Trị",
+    "customerType": 3
+  },
+  {
+    "customerCode": "KH-1155",
+    "customerName": "Huy",
+    "customerBirthday": "2022-04-28",
+    "customerGender": "",
+    "customerIdCard": "201671434",
+    "customerPhone": "0909123123",
+    "customerEmail": "huy@gmail.com",
+    "customerAddress": "Đà Nẵng",
+    "customerType": 2,
+    "id": 3
+  }
+],
+  "service": [
+    {
+      "serviceId": 1,
+      "serviceCode": "DV-001",
+      "serviceName": "Villa Beach Front",
+      "serviceArea": 25000,
+      "serviceCost": 10000000,
+      "serviceMaxPeople": 10,
+      "roomStandard": "vip",
+      "descriptionOtherConvenience": "có hồ bơi",
+      "poolArea": 500,
+      "numberOfFloors": 4,
+      "rentType": "year",
+      "serviceType": "villa"
+    },
+    {
+      "serviceId": 2,
+      "serviceCode": "DV-002",
+      "serviceName": "House Princess 01",
+      "serviceArea": 14000,
+      "serviceCost": 5000000,
+      "serviceMaxPeople": 7,
+      "roomStandard": "vip",
+      "descriptionOtherConvenience": "Có thêm bếp nướng",
+      "poolArea": null,
+      "numberOfFloors": 3,
+      "rentType": "month",
+      "serviceType": "house"
+    }
+  ]
+
+}
