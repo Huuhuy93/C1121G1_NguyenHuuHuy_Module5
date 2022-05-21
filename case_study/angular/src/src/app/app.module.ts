@@ -26,15 +26,6 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ListServiceComponent,
-    CreateServiceComponent,
-    EditServiceComponent,
-    ListCustomerComponent,
-    CreateCustomerComponent,
-    EditCustomerComponent,
-    ListContractComponent,
-    CreateContractComponent,
-    ListFacilityComponent
   ],
   imports: [
     BrowserModule,

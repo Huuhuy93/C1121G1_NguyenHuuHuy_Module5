@@ -41,6 +41,19 @@ const routes: Routes = [
   },
   {
     path: 'service/create', component: CreateServiceComponent,
+  },
+
+  {
+    path: 'customer',
+    loadChildren: () => import('./customer/customer.module').then(module => module.CustomerModule)
+  },
+  {
+    path: 'contract',
+    loadChildren: () => import('./contract/contract.module').then(module => module.ContractModule)
+  },
+  {
+    path: 'service',
+    loadChildren: () => import('./service/service.module').then(module => module.ServiceModule)
   }
 ];
 
