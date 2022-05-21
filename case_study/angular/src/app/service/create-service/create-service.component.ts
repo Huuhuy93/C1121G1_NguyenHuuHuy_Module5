@@ -8,22 +8,21 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class CreateServiceComponent implements OnInit {
 
-  createServiceForm : FormGroup;
+  createServiceForm : FormGroup = new FormGroup({
+    serviceCode : new FormControl("", [Validators.required, Validators.pattern('^DV-[\\d]{4}')]),
+    serviceName : new FormControl("", Validators.required),
+    serviceArea : new FormControl("", [Validators.required, Validators.min(0)]),
+    serviceCost : new FormControl("", [Validators.required, Validators.min(0)]),
+    serviceMaxPeople : new FormControl("", [Validators.required, Validators.min(0)]),
+    roomStandard : new FormControl("", Validators.required),
+    descriptionOtherConvenience : new FormControl("", Validators.required),
+    poolArea : new FormControl("", Validators.min(0)),
+    numberOfFloors : new FormControl("", Validators.min(0)),
+    serviceType : new FormControl("", Validators.required),
+    rentType : new FormControl("", Validators.required),
+  })
 
   constructor() {
-    this.createServiceForm = new FormGroup({
-      serviceCode : new FormControl("", [Validators.required, Validators.pattern('^DV-[\\d]{4}')]),
-      serviceName : new FormControl("", Validators.required),
-      serviceArea : new FormControl("", [Validators.required, Validators.min(0)]),
-      serviceCost : new FormControl("", [Validators.required, Validators.min(0)]),
-      serviceMaxPeople : new FormControl("", [Validators.required, Validators.min(0)]),
-      roomStandard : new FormControl("", Validators.required),
-      descriptionOtherConvenience : new FormControl("", Validators.required),
-      poolArea : new FormControl("", Validators.min(0)),
-      numberOfFloors : new FormControl("", Validators.min(0)),
-      serviceType : new FormControl("", Validators.required),
-      rentType : new FormControl("", Validators.required),
-    })
   }
 
   ngOnInit(): void {

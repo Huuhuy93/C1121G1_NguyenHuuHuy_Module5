@@ -12,6 +12,8 @@ export class ListCustomerComponent implements OnInit {
 
   customers: Customer[] = [];
 
+  page: number = 0;
+
   // tao bien modal delete
   deleteCustomer: Customer;
   check: boolean;
@@ -24,32 +26,42 @@ export class ListCustomerComponent implements OnInit {
   }
 
   getAll() {
-    return this.customerService.getAll().subscribe(customers => {
+    return this.customerService.getAll(this.page).subscribe(customers => {
       this.customers = customers;
     })
   }
 
   // modal delete
-  onOpenEditModal(a: Customer): void {
-    this.deleteCustomer = a;
-    const container = document.getElementById('main-container');
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.style.display = 'none';
-    button.setAttribute('data-toggle', 'modal');
-    button.setAttribute('data-target', '#deleteModal');
-    container.appendChild(button);
-    this.check = true;
-    button.click();
-  }
+  // name: any;
+  // onOpenEditModal(a: Customer): void {
+  //   this.deleteCustomer = a;
+  //   const container = document.getElementById('main-container');
+  //   const button = document.createElement('button');
+  //   button.type = 'button';
+  //   button.style.display = 'none';
+  //   button.setAttribute('data-toggle', 'modal');
+  //   button.setAttribute('data-target', '#deleteModal');
+  //   container.appendChild(button);
+  //   this.check = true;
+  //   button.click();
+  // }
 
-  delete(event) {
-    this.customerService.deleteCustomer(this.deleteCustomer).subscribe(() => {
-      event.click();
-      this.ngOnInit();
-    }, (error: HttpErrorResponse) => {
-      alert('error');
-    });
-  }
+  // delete(event) {
+  //   this.customerService.deleteCustomer(id).subscribe(() => {
+  //     event.click();
+  //     this.ngOnInit();
+  //   }, (error: HttpErrorResponse) => {
+  //     alert('error');
+  //   });
+  // }
 
+  // search() {
+  //   if (this.name === ''){
+  //     this.ngOnInit();
+  //   } else {
+  //     this.customers = this.customers.filter(res => {
+  //       return res.customerName.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
+  //     });
+  //   }
+  // }
 }

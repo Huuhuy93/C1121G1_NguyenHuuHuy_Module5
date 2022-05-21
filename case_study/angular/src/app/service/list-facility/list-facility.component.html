@@ -26,7 +26,13 @@
 
 
 
+
+
 <div class="container" style="margin-top: 50px">
+
+  <div>
+    <button type="button" class="btn btn-outline-success"><a [routerLink]="['/service/create']">Create</a></button>
+  </div>
 
   <table class="table">
     <thead class="thead-dark">
@@ -40,6 +46,8 @@
       <th>description Other Convenience</th>
       <th>Pool Area</th>
       <th>Number Of Floors</th>
+      <th>Rent type</th>
+      <th>Service type</th>
       <th>Update</th>
       <th>Delete</th>
     </tr>
@@ -55,6 +63,8 @@
       <td>{{service.descriptionOtherConvenience}}</td>
       <td>{{service.poolArea}}</td>
       <td>{{service.numberOfFloors}}</td>
+      <td>{{service.rentType}}</td>
+      <td>{{service.serviceType}}</td>
 
 
       <td>

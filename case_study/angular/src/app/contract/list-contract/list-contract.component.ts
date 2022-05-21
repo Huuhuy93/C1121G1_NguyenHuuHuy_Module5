@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Contract} from "../contract";
+import {ContractService} from "../../services/contract.service";
 
 @Component({
   selector: 'app-list-contract',
@@ -8,14 +9,18 @@ import {Contract} from "../contract";
 })
 export class ListContractComponent implements OnInit {
 
-  contracts : Array<Contract> = [];
+  contracts : Contract[] = [];
 
-  constructor() {
-    this.contracts.push(new Contract(1, "HD-001", "05-05-2021", "08-05-2021", 1000000, 10000000, "Nguyễn Văn An", "Nguyễn Thị Hào", "Room Twin 01"));
-    this.contracts.push(new Contract(2, "HD-002", "03-07-2021", "08-07-2021", 3000000, 15000000, "Nguyễn Hữu Hà", "Trương Đình Nghệ", "Villa Beach Front"));
+  constructor(private contractService: ContractService) {
   }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
+  private getAll() {
+    return this.contractService.getAll().subscribe(contracts => {
+      this.contracts = contracts;
+    })
+  }
 }

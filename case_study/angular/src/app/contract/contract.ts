@@ -1,3 +1,5 @@
+import {Service} from "../service/service";
+
 export class Contract {
   contractId: number;
   contractCode: string;
@@ -7,10 +9,10 @@ export class Contract {
   totalMoney: number;
   employee: string;
   customer: string;
-  service: string;
+  service: Service;
 
 
-  constructor(contractId: number, contractCode: string, startDate: string, endDate: string, contractDeposit: number, totalMoney: number, employee: string, customer: string, service: string) {
+  constructor(contractId: number, contractCode: string, startDate: string, endDate: string, contractDeposit: number, totalMoney: number, employee: string, customer: string, service: Service) {
     this.contractId = contractId;
     this.contractCode = contractCode;
     this.startDate = startDate;

@@ -27,6 +27,11 @@
 
 
 <div class="container" style="margin-top: 50px">
+
+  <div style="margin-bottom: 15px">
+    <button type="button" class="btn btn-outline-success"><a [routerLink]="['/customer/list']">Back Customer List</a></button>
+  </div>
+
   <form [formGroup]="editCustomerForm" (ngSubmit)="updateCustomer(id)">
     <input type="hidden" id="id" name="id" value="1" formControlName="id">
 
@@ -40,6 +45,8 @@
       <div class="form-group col-md-6">
         <label for="code">Customer Code</label>
         <input type="text" readonly formControlName="customerCode" name="customerCode" class="form-control" id="code">
+        <small style="color: red" *ngIf="(editCustomerForm.controls.customerCode.hasError('required')&& (editCustomerForm.controls.customerCode.dirty||editCustomerForm.controls.customerCode.touched))">Mã khách hàng không được để trống !</small>
+        <small style="color: red" *ngIf="(editCustomerForm.controls.customerCode.hasError('pattern')&& (editCustomerForm.controls.customerCode.dirty||editCustomerForm.controls.customerCode.touched))">Mã khách hàng phải đúng định dạng KH-XXXX !</small>
       </div>
     </div>
 
@@ -71,8 +78,8 @@
       <div class="form-group col-md-6">
         <label for="type">Customer type</label>
         <select id="type" formControlName="customerType" name="customerType" class="form-control">
-          <option *ngFor="let c of customerTypeList" [ngValue]="c.id">
-            {{c.name}}
+          <option *ngFor="let c of customerTypes" [ngValue]="c.customerTypeId">
+            {{c.customerTypeName}}
           </option>
         </select>
         <small style="color: red" *ngIf="(editCustomerForm.controls.customerType.hasError('required')&& (editCustomerForm.controls.customerType.dirty||editCustomerForm.controls.customerType.touched))">Loại khách hàng không được để trống !</small>
