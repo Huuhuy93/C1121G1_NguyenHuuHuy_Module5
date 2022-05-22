@@ -1,0 +1,75 @@
+<div id="main-container">
+  <div class="container" style="margin-top: 50px">
+    <div style="display: flex; justify-content: space-between">
+      <div>
+        <button type="button" class="btn btn-outline-success"><a [routerLink]="['/bds/create']">Create</a></button>
+      </div>
+
+    </div>
+
+
+    <table class="table">
+      <thead class="thead-dark">
+      <tr>
+        <th>NO</th>
+        <th>Tiêu đề</th>
+        <th>Loại bài viết</th>
+        <th>Danh mục</th>
+        <th>Ngày đăng</th>
+        <th>Trạng thái</th>
+        <th>Giá</th>
+        <th>Xóa</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let bds of batDongSans; index as i">
+        <td>{{i + 1}}</td>
+        <td>{{bds.tuaDe}}</td>
+        <td>{{bds.banDangTin}}</td>
+        <td>{{bds.danhMuc.name}}</td>
+        <td>{{bds.ngayDang}}</td>
+        <td>{{bds.trangThai}}</td>
+        <td>{{bds.gia | currency:"VND"}}</td>
+        <td><a (click)="onOpenEditModal(bds)" style="color: darkviolet">delete</a></td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <div
+      class="modal fade"
+      id="deleteModal"
+      data-backdrop="static"
+      data-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">xóa bài đăng </h5>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            <!--                <input type="hidden" id="customerDelete_id" name="customer_id">-->
+          </div>
+          <div class="modal-body" id="product_delete">
+            <div class="modal-body">
+              <div *ngIf="check">
+                <p>bạn có muốn xóa bài đăng : {{deleteBds.tuaDe}}</p>
+                <p>sản phẩm có mã là : {{deleteBds.id}}</p>
+              </div>
+
+              <div class="modal-footer">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button #closeModal type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button (click)="delete(closeModal)" type="button" class="btn btn-primary" id="delete_customer_id">ok
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

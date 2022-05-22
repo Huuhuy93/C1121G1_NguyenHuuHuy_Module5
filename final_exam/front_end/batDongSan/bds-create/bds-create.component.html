@@ -1,0 +1,148 @@
+<div class="container" style="margin-top: 50px">
+  <div style="margin-bottom: 15px">
+    <button type="button" class="btn btn-outline-success"><a [routerLink]="['/bds/list']">Trở về danh sách</a></button>
+  </div>
+
+  <form [formGroup]="bdsForm" (ngSubmit)="submit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="dm">Danh mục</label>
+        <select id="dm" formControlName="danhMuc" name="danhMuc" class="form-control">
+          <option *ngFor="let d of danhMucs" [ngValue]="d">{{d.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="vm">Vùng miền</label>
+        <select id="vm" formControlName="vungMien" name="vungMien" class="form-control">
+          <option value="Hà Nội" selected>Hà Nội</option>
+          <option value="Tp Hồ Chí Minh">Tp Hồ Chí Minh</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="g">Bạn là :</label>
+        <select id="g" formControlName="banLa" name="banLa" class="form-control">
+          <option value="Cá nhân" selected>Cá nhân</option>
+          <option value="Công ty">Công ty</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="d">Bạn đăng tin :</label>
+        <select id="d" formControlName="banDangTin" name="banDangTin" class="form-control">
+          <option value="Cần bán" selected>Cần bán</option>
+          <option value="Cần mua">Cần mua</option>
+          <option value="Cho thuê">Cho thuê</option>
+          <option value="Cần thuê">Cần thuê</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="tt">Tình trạng :</label>
+        <select id="tt" formControlName="tinhTrang" name="tinhTrang" class="form-control">
+          <option value="Mới" selected>Mới</option>
+          <option value="Đã sử dụng">Đã sử dụng</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="dc1">Địa chỉ</label>
+        <input type="text" formControlName="diaChi" name="diaChi" class="form-control" id="dc1">
+        <div *ngIf="!diaChi.valid && (diaChi.touched || diaChi.dirty)">
+          <small *ngIf="diaChi.errors?.required" class="alert alert-danger">Không được để trống.</small>
+        </div>
+        <div *ngIf="diaChi.valid">
+          <p class="alert alert-success">Hợp lệ.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="dc">Diện tích</label>
+        <input type="text" formControlName="dienTich" name="dienTich" class="form-control" id="dc">
+        <div *ngIf="!dienTich.valid && (dienTich.touched || dienTich.dirty)">
+          <p *ngIf="dienTich.errors?.required" class="alert alert-danger">Không được để trống .</p>
+          <p *ngIf="dienTich.errors?.pattern" class="alert alert-danger">Phải là số .</p>
+          <p *ngIf="dienTich.errors?.dienTichMin" class="alert alert-danger">Phải lớn hơn 20 .</p>
+        </div>
+        <div *ngIf="dienTich.valid">
+          <p class="alert alert-success">Hợp lệ.</p>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="h">Hướng :</label>
+        <select id="h" formControlName="huong" name="huong" class="form-control">
+          <option value="Đông" selected>Đông</option>
+          <option value="Tây">Tây</option>
+          <option value="Nam">Nam</option>
+          <option value="Bắc">Bắc</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="aa">Tựa đề</label>
+        <input type="text" formControlName="tuaDe" name="tuaDe" class="form-control" id="aa">
+        <div *ngIf="!tuaDe.valid && (tuaDe.touched || tuaDe.dirty)">
+          <p *ngIf="tuaDe.errors?.required" class="alert alert-danger">Không được để trống .</p>
+        </div>
+        <div *ngIf="tuaDe.valid">
+          <p class="alert alert-success">Hợp lệ.</p>
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="222">Nội dung</label>
+        <input type="text" formControlName="noiDung" name="noiDung" class="form-control" id="222">
+        <div *ngIf="!noiDung.valid && (noiDung.touched || noiDung.dirty)">
+          <p *ngIf="noiDung.errors?.required" class="alert alert-danger">Không được để trống .</p>
+        </div>
+        <div *ngIf="noiDung.valid">
+          <p class="alert alert-success">Hợp lệ !</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="bb">Giá</label>
+        <input type="text" formControlName="gia" name="gia" class="form-control" id="bb">
+        <div *ngIf="!gia.valid && (gia.touched || gia.dirty)">
+          <p *ngIf="gia.errors?.required" class="alert alert-danger">Không được để trống .</p>
+          <p *ngIf="gia.errors?.pattern" class="alert alert-danger">Phải là số .</p>
+          <p *ngIf="gia.errors?.giaMin" class="alert alert-danger">Phải lớn hơn 100 triệu .</p>
+        </div>
+        <div *ngIf="gia.valid">
+          <p class="alert alert-success">Hợp lệ .</p>
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="nd">Hình ảnh</label>
+        <input type="text" formControlName="hinhAnh" name="hinhAnh" class="form-control" id="nd">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Ngày đăng</label>
+      <input type="date" formControlName="ngayDang" name="ngayDang" class="form-control" id="address">
+    </div>
+
+    <div class="form-group">
+      <label for="tra">Trạng thái</label>
+      <input type="text" formControlName="trangThai" name="trangThai" class="form-control" id="tra">
+    </div>
+
+
+    <div style="text-align: center; margin-bottom: 10px">
+      <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+    </div>
+  </form>
+</div>
